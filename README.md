@@ -16,7 +16,7 @@ While the data files are too large to be included in this repository, and thus w
 ## Credit
 This analysis is based on materials developed by Ruth Oliver at UC Santa Barbara.
 
-## Repository Contents
+## Repository and Zipped Data Contents
 
 <pre>
   MarineAquaSuitability
