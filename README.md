@@ -15,3 +15,18 @@ While the data files are too large to be included in this repository, and thus w
 
 ## Credit
 This analysis is based on materials developed by Ruth Oliver at UC Santa Barbara.
+
+MarineAquaSuitability
+│   README.md
+│   Rmd/Proj files 
+│   .html knitted file
+│   .gitignore
+│
+└───data
+    │   wc_regions_clean.shp
+    │   depth.tif
+    │   average_annual_sst_2008.tif
+    │   average_annual_sst_2009.tif        
+    │   average_annual_sst_2010.tif        
+    │   average_annual_sst_2011.tif
+    │   average_annual_sst_2012.tif  
