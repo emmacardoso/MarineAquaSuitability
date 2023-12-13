@@ -29,6 +29,8 @@ In regards to oysters, based on previous research, it is known that oysters need
 
 [^noaa2]:National Oceanic and Atmospheric Administration. What is the “EEZ”? What is the “EEZ”?: Exploration Facts: NOAA Office of Ocean Exploration and Research. https://oceanexplorer.noaa.gov/facts/useez.html#:~:text=An%20“exclusive%20economic%20zone%2C”,both%20living%20and%20nonliving%20resources. 
 
+credit : this analysis is based upon materials developed by Ruth Oliver, a professor within UC Santa Barbara's Bren Graduate School of Environmental Data Science. 
+
 ### Data
 #### Sea Surface Temperatures
 Using data originally generated from [NOAA's 5km Daily Global Satellite Sea Surface Temperature Anomaly v3.1](https://coralreefwatch.noaa.gov/product/5km/index_5km_ssta.php), this analysis will use the average annual sea surface temperatures (SST) from 2008-2012 to characterize the average sea surface temperatures within the area.
