@@ -1,54 +1,79 @@
----
-title: "Marine Aquaculture Suitability"
-author: "Emma Cardoso"
-date: "2023-12-13"
-output: 
-  github_document: default
-  html_document:
-    theme: default
-    toc: true
-    toc_float: true
-    code_folding: show
----
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+Marine Aquaculture Suitability
+================
+Emma Cardoso
+2023-12-13
 
 ## Background
-According to the [National Oceanic and Atmospheric Administration](https://www.fisheries.noaa.gov/insight/marine-aquaculture#:~:text=Marine%20aquaculture%20provides%20a%20domestic,supports%20our%20wild%20fisheries%20production.) within the United States Department of Commerce, marine aquaculture refer to the "breeding, rearing, and harvesting of aquatic plants and animals".[^noaa] While seafood is recognized as a source of protein for over 3 billion people globally, the United States imports over 60% of consumed seafood, resulting in a deficit exceeding $16 billion. [^aop]. Thus, as marine aquaculture has the ability to boost food production, create economic opportunities and boost local economies, and can help keep waterways clean, the implementation of additional marine aquacultures in the United States should be seriously considered. Within the United States, marine aquacultures primarily produce oysters, mussels, shrimp, clams, salmon, and other marine fish that can survive in the oceanic conditions off the US' coast.[^noaa]  
 
-Economic Exclusion Zones, EEZ, are regions of the ocean in which coastal nations have jurisdiction over living and non-living resources.[^noaa2] These zones typically extend approximately 200 nautical miles (230 miles) beyond a coastal nation's territorial sea.[^noaa2]
+According to the [National Oceanic and Atmospheric
+Administration](https://www.fisheries.noaa.gov/insight/marine-aquaculture#:~:text=Marine%20aquaculture%20provides%20a%20domestic,supports%20our%20wild%20fisheries%20production.)
+within the United States Department of Commerce, marine aquaculture
+refer to the “breeding, rearing, and harvesting of aquatic plants and
+animals”.[^1] While seafood is recognized as a source of protein for
+over 3 billion people globally, the United States imports over 60% of
+consumed seafood, resulting in a deficit exceeding \$16 billion. [^2].
+Thus, as marine aquaculture has the ability to boost food production,
+create economic opportunities and boost local economies, and can help
+keep waterways clean, the implementation of additional marine
+aquacultures in the United States should be seriously considered. Within
+the United States, marine aquacultures primarily produce oysters,
+mussels, shrimp, clams, salmon, and other marine fish that can survive
+in the oceanic conditions off the US’ coast.[^3]
 
-The purpose of this analysis is to identify which Economic Exclusive Zones off the West Coast of the United States are best suited for developing Marine Aquacultures for several species of oysters, as oysters are organisms that have proved successful for United States aquacultures. Additionally, this project aims not only to assess which EEZs are suitable for oysters, but also to create a function in which the optimal conditions for survival (sea surface temperatures and depth below sea level) can be inputted for any aquatic species, and the generated output will indicate which West Coast EEZs are best suited for developing marine aquacultures for said species.
+Economic Exclusion Zones, EEZ, are regions of the ocean in which coastal
+nations have jurisdiction over living and non-living resources.[^4]
+These zones typically extend approximately 200 nautical miles (230
+miles) beyond a coastal nation’s territorial sea.[^5]
 
-In regards to oysters, based on previous research, it is known that oysters need the following conditions for optimal growth :\
+The purpose of this analysis is to identify which Economic Exclusive
+Zones off the West Coast of the United States are best suited for
+developing Marine Aquacultures for several species of oysters, as
+oysters are organisms that have proved successful for United States
+aquacultures. Additionally, this project aims not only to assess which
+EEZs are suitable for oysters, but also to create a function in which
+the optimal conditions for survival (sea surface temperatures and depth
+below sea level) can be inputted for any aquatic species, and the
+generated output will indicate which West Coast EEZs are best suited for
+developing marine aquacultures for said species.
 
--   sea surface temperature: 11-30&deg;C\
--   depth: 0-70 meters below sea level
+In regards to oysters, based on previous research, it is known that
+oysters need the following conditions for optimal growth :  
 
+- sea surface temperature: 11-30°C  
+- depth: 0-70 meters below sea level
 
-
-[^aop]:Aquarium of the Pacific. Marine Aquaculture. Seafood for the Future | Aquarium of the Pacific. https://www.aquariumofpacific.org/seafoodfuture/marine_aquaculture 
-
-[^noaa]:National Oceanic and Atmospheric Administration. Marine Aquaculture. https://www.fisheries.noaa.gov/insight/marine-aquaculture#:~:text=Marine%20aquaculture%20provides%20a%20domestic,supports%20our%20wild%20fisheries%20production. 
-
-[^noaa2]:National Oceanic and Atmospheric Administration. What is the “EEZ”? What is the “EEZ”?: Exploration Facts: NOAA Office of Ocean Exploration and Research. https://oceanexplorer.noaa.gov/facts/useez.html#:~:text=An%20“exclusive%20economic%20zone%2C”,both%20living%20and%20nonliving%20resources. 
-
-Credit : This analysis is based upon materials developed by Ruth Oliver, a professor within UC Santa Barbara's Bren Graduate School of Environmental Data Science. 
+Credit : This analysis is based upon materials developed by Ruth Oliver,
+a professor within UC Santa Barbara’s Bren Graduate School of
+Environmental Data Science.
 
 ### Data
+
 #### Sea Surface Temperatures
-Using data originally generated from [NOAA's 5km Daily Global Satellite Sea Surface Temperature Anomaly v3.1](https://coralreefwatch.noaa.gov/product/5km/index_5km_ssta.php), this analysis will use the average annual sea surface temperatures (SST) from 2008-2012 to characterize the average sea surface temperatures within the area.
+
+Using data originally generated from [NOAA’s 5km Daily Global Satellite
+Sea Surface Temperature Anomaly
+v3.1](https://coralreefwatch.noaa.gov/product/5km/index_5km_ssta.php),
+this analysis will use the average annual sea surface temperatures (SST)
+from 2008-2012 to characterize the average sea surface temperatures
+within the area.
 
 #### Bathymetry
-For data regarding the depth of the ocean, data from [General Bathymetric Chart of the Oceans (GEBCO)](https://www.gebco.net/data_and_products/gridded_bathymetry_data/#area) will be utilized.
+
+For data regarding the depth of the ocean, data from [General
+Bathymetric Chart of the Oceans
+(GEBCO)](https://www.gebco.net/data_and_products/gridded_bathymetry_data/#area)
+will be utilized.
 
 #### Economic Exclusive Zones
-Maritime boundaries will be designated using Economic Exclusive Zones (EEZ) off the West Coast of the United States, where this data was collected from [Marineregions.org](https://www.marineregions.org/eez.php).
+
+Maritime boundaries will be designated using Economic Exclusive Zones
+(EEZ) off the West Coast of the United States, where this data was
+collected from
+[Marineregions.org](https://www.marineregions.org/eez.php).
 
 ## Data Analysis Workflow
-```{r loading, message=FALSE, warning=FALSE}
+
+``` r
 #loading in libraries
 library(here)
 library(sf)
@@ -62,17 +87,34 @@ library(spData)
 here()
 ```
 
+    ## [1] "/Users/em/Desktop/EDS 223/MarineAquaSuitability"
+
 ### Finding Locations Suitable for Oyster Aquacultures
-In order to identify which Economic Exclusive Zones off the United State's West Coast are best suited for creating oyster aquaculture, we will need to first identify which areas in the Pacific posses conditions that are optimal for oyster growth. This will be achieved by :
 
-- combining sea surface temperature raster data from 2008-2012 into a singular rasterstack, to then determine the mean SST from 2008-2012, as this value will serve as the sea surface temperature for which our analysis will be based upon\
-- manipulating the depth raster to match the resolution and extent of the mean SST raster, so that they can then be combined into a singular raster for further analysis\
-    - this will be achieved by resampling the depth raster using the nearest neighbor approach\
-- reclassifying both the SST and depth data to identify areas that are suitable for oysters, where suitable areas will be classified as `1` and unsuitable areas will be classified as `NA`\
-- identifying areas that satisfy both SST and depth conditions, thereby indicating areas that are suitable for oysters, by creating an overlay using the `lapp()` function multiplying cell values\
+In order to identify which Economic Exclusive Zones off the United
+State’s West Coast are best suited for creating oyster aquaculture, we
+will need to first identify which areas in the Pacific posses conditions
+that are optimal for oyster growth. This will be achieved by :
 
-#### Preparing data for analysis 
-```{r message=FALSE, warning=FALSE, include=TRUE}
+- combining sea surface temperature raster data from 2008-2012 into a
+  singular rasterstack, to then determine the mean SST from 2008-2012,
+  as this value will serve as the sea surface temperature for which our
+  analysis will be based upon  
+- manipulating the depth raster to match the resolution and extent of
+  the mean SST raster, so that they can then be combined into a singular
+  raster for further analysis  
+  - this will be achieved by resampling the depth raster using the
+    nearest neighbor approach  
+- reclassifying both the SST and depth data to identify areas that are
+  suitable for oysters, where suitable areas will be classified as `1`
+  and unsuitable areas will be classified as `NA`  
+- identifying areas that satisfy both SST and depth conditions, thereby
+  indicating areas that are suitable for oysters, by creating an overlay
+  using the `lapp()` function multiplying cell values  
+
+#### Preparing data for analysis
+
+``` r
 #loading in data ------------
 
 #loading in shapefile data for the West Coast EEZ 
@@ -91,7 +133,11 @@ sst_rast <- stack(sst_files)
 names(sst_rast) <- c("sst_2008", "sst_2009", "sst_2010", "sst_2011", "sst_2012")
 
 plot(sst_rast, main = "Stacked Sea Surface Temperature Raster") #checking raster stack to ensure that stack occurred correctly and names were changed, which they were !
+```
 
+![](MarineAquaSuitability_files/figure-gfm/unnamed-chunk-1-1.png)<!-- -->
+
+``` r
 #loading in bathymetry raster
 bath_rast <- rast("./data/depth.tif")
 
@@ -101,7 +147,11 @@ if (identical(st_crs(eez_shape), st_crs(sst_rast)) && identical(st_crs(eez_shape
 } else {
   cat("Coordinate Reference Systems for the data, eez_shape, sst_rast, and bath_rast, are different.\n")
 }
+```
 
+    ## Coordinate Reference Systems for the data, eez_shape, sst_rast, and bath_rast, are different.
+
+``` r
 #they are different, so now lets reproject them to all be the same, using the CRS of westcoast shape -----------
 
 #changing crs of raster to match that of westcoast shape
@@ -114,7 +164,11 @@ if (identical(st_crs(sst_rast), st_crs(bath_rast))) {
 } else {
   cat("Coordinate Reference Systems for the data are different.\n")
 }
+```
 
+    ## Coordinate Reference Systems for eez_shape, sst_rast, and bath_rast, are the same.
+
+``` r
 #processing data -----------
 
 #finding the mean SST from 2008-2012
@@ -126,7 +180,11 @@ sst_rast_C <- (sst_rast - 273.15)
 mean_sst_C <- (mean_sst - 273.15)
 
 plot(mean_sst_C, main = "Mean Sea Surface Temperatures in C°") #plotting to ensure correctly changed values and mean raster is only one layer 
+```
 
+![](MarineAquaSuitability_files/figure-gfm/unnamed-chunk-1-2.png)<!-- -->
+
+``` r
 #cropping the depth raster to match the extent of sst_rast
 depth_rast_crop <- crop(bath_rast, ext(mean_sst_C))
 
@@ -141,13 +199,20 @@ if (all(ext(mean_sst_rast) == ext(depth_rast)) && all(res(mean_sst_rast) == res(
 } else {
   cat("The extents, resolutions, or CRS do not match.\n")
 }
+```
 
+    ## The extents, resolutions, and CRS match.
+
+``` r
 depth_sst <- c(depth_rast, mean_sst_rast) #stacking raster
 plot(depth_sst, main = c("Depth (m)", "Mean Sea Surface Temperature (C°)")) #plotting check to ensure that stacking was successful
 ```
 
+![](MarineAquaSuitability_files/figure-gfm/unnamed-chunk-1-3.png)<!-- -->
+
 #### Finding suitable locations for optimal oyster growth
-```{r warning=FALSE}
+
+``` r
 #finding suitable locations ------------
 
 #reclassifying sst data to find locations between 11-30 degrees C, which are suitable for oysters
@@ -160,8 +225,11 @@ sstrcl <- matrix(c(11, 30, 1,
 suitable_sst <- classify(mean_sst_rast, rcl = sstrcl)
 #plotting to ensure that reclassification occurred correctly 
 plot(suitable_sst, main = "Suitable Sea Surface Temperature Locations for Oysters")
+```
 
+![](MarineAquaSuitability_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
 
+``` r
 #reclassifying depth data to find locations between 0-70 meters below sea level, which are suitable for oysters
 #creating a matrix for depth to reclassify based on
 depthrcl <- matrix(c(-70, 0, 1,
@@ -172,8 +240,11 @@ depthrcl <- matrix(c(-70, 0, 1,
 suitable_depth <- classify(depth_rast, rcl = depthrcl)
 #plotting to ensure that reclassification occurred correctly 
 plot(suitable_depth, main = "Suitable Depth Locations for Oysters")
+```
 
+![](MarineAquaSuitability_files/figure-gfm/unnamed-chunk-2-2.png)<!-- -->
 
+``` r
 #finding locations that satisfy both sst and depth conditions using lapp to multiply the values in both rasters so that only suitable areas have an output of 1
 suitable_areas <- lapp(c(suitable_sst, suitable_depth), fun = function(x, y) { x * y }) 
 #plotting to ensure output is correct
@@ -182,20 +253,37 @@ title(main = c("Areas with Suitable Sea Surface Temperature and Depth\n Conditio
       adj = .4,
       line = 2.5,
       cex.main = 1)
+```
+
+![](MarineAquaSuitability_files/figure-gfm/unnamed-chunk-2-3.png)<!-- -->
+
+``` r
 names(suitable_areas) <- ("suitable_areas") #changing layer name
 ```
 
 ### Determining the Most Suitable EEZs
-Once we have identified which areas in the Pacific Ocean off the western coast of the United States possess optimal conditions for oyster growth, we can determine the total suitable area within each EEZ to rank these zones in terms of priority areas for potential creation of oyster aquacultures. This will be achieved by :
 
-- rasterizing the EEZ shapefile, to then apply a mask to select for suitable areas within each west coast EEZ\
-- calculate the area of grid cells within the entire mask\
-- calculate the total suitable area within each west coast EEZ region\
-- joining the total suitable area for each EEZ region back to the original EEZ shapefile, to then be able to calculate the percentage of each EEZ zone that is suitable\
-- visualize the results by creating a map of total suitable area by EEZ, and percent suitable area by EEZ, to determine which regions have the greatest percentage of suitable area and in turn rank EEZ zones in terms of priority areas for creating oyster aquacultures
+Once we have identified which areas in the Pacific Ocean off the western
+coast of the United States possess optimal conditions for oyster growth,
+we can determine the total suitable area within each EEZ to rank these
+zones in terms of priority areas for potential creation of oyster
+aquacultures. This will be achieved by :
+
+- rasterizing the EEZ shapefile, to then apply a mask to select for
+  suitable areas within each west coast EEZ  
+- calculate the area of grid cells within the entire mask  
+- calculate the total suitable area within each west coast EEZ region  
+- joining the total suitable area for each EEZ region back to the
+  original EEZ shapefile, to then be able to calculate the percentage of
+  each EEZ zone that is suitable  
+- visualize the results by creating a map of total suitable area by EEZ,
+  and percent suitable area by EEZ, to determine which regions have the
+  greatest percentage of suitable area and in turn rank EEZ zones in
+  terms of priority areas for creating oyster aquacultures
 
 #### Rasterizing EEZ data and performing calculations
-```{r message=FALSE, warning=FALSE}
+
+``` r
 #determining the most suitable EEZ regions ----------
 
 #rasterizing eez vector by region
@@ -222,8 +310,10 @@ wc_eez <- left_join(eez_shape, eez_suitable_cell_area, by = "rgn")
 wc_eez <- wc_eez %>%
   mutate(pct_suitable_area = (suitable_area_km2/area_km2)*100)
 ```
-#### Creating plots to visualize suitability of different EEZ zones for potential oyster aquacultures 
-```{r message=FALSE, warning=FALSE}
+
+#### Creating plots to visualize suitability of different EEZ zones for potential oyster aquacultures
+
+``` r
 #visualizing the results ----------
 
 #creating a baseplot of the United States to provide spatial context for plots
@@ -247,10 +337,11 @@ ggplot() +
                          label_size = 20, 
                          face = "bold",
                          style = ggspatial::north_arrow_nautical)
-
 ```
 
-```{r message=FALSE, warning=FALSE}
+![](MarineAquaSuitability_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
+
+``` r
 #visualizing the results ----------
 
 #creating a map for percent suitable area by region
@@ -273,15 +364,33 @@ ggplot()+
                          style = ggspatial::north_arrow_nautical)
 ```
 
+![](MarineAquaSuitability_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
+
 ## Creating a Function to Broaden Workflow
-Now that we have determined which EEZ's off of the United States' west coast are most suitable for oysters, it is imperative to be able to repeat this analysis for other species in order to gain insight regarding where implementation of marine aquacultures for other species may be beneficial. 
 
-This is achieved by creating a function in which the input requires the user to identify the organism in question, and the minimum and maximum sea surface temperature and depth for the optimal growth conditions of said organim. The output of this function will produce a map of total suitable area by EEZ and percent suitable area by EEZ, thereby allowing the user to identify which EEZ zones have the greatest aquaculture potential for the specified organism.
+Now that we have determined which EEZ’s off of the United States’ west
+coast are most suitable for oysters, it is imperative to be able to
+repeat this analysis for other species in order to gain insight
+regarding where implementation of marine aquacultures for other species
+may be beneficial.
 
-To test the viability of this function, the function was run for Pacific Littleneck Clams, Leukoma staminea, as these Clams are popular choices for marine aquaculture, and have a wide distribution across the Pacific Ocean. These clams have a preferred temperature range of 7.3-15.7°C, and a depth range of 0-46m. 
+This is achieved by creating a function in which the input requires the
+user to identify the organism in question, and the minimum and maximum
+sea surface temperature and depth for the optimal growth conditions of
+said organim. The output of this function will produce a map of total
+suitable area by EEZ and percent suitable area by EEZ, thereby allowing
+the user to identify which EEZ zones have the greatest aquaculture
+potential for the specified organism.
 
-### Creating function to identify EEZ suitability given species' optimal growth conditions
-```{r message=FALSE, warning=FALSE}
+To test the viability of this function, the function was run for Pacific
+Littleneck Clams, Leukoma staminea, as these Clams are popular choices
+for marine aquaculture, and have a wide distribution across the Pacific
+Ocean. These clams have a preferred temperature range of 7.3-15.7°C, and
+a depth range of 0-46m.
+
+### Creating function to identify EEZ suitability given species’ optimal growth conditions
+
+``` r
 #broadening workflow ----------
 
 #defining function input needed
@@ -370,15 +479,37 @@ suitable_pct_plot <- ggplot()+
 
   return(list(suitable_area_plot, suitable_pct_plot))
 }
-
 ```
 
-### Running function of Pacific Littleneck Clams 
-```{r message=FALSE, warning=FALSE, echo=FALSE, paged.print=FALSE, hide = TRUE}
-#running function on a species of choice -----------
+### Running function of Pacific Littleneck Clams
 
-#when looking at which species have the greatest potential for marine aquaculture, clams were among that list! thus, I decided to run this check using habitat information for clams. Specifically, Pacific Littleneck Clams, Leukoma staminea, as these Clams are popular choices for marine aquaculture, and have a wide distribution across the Pacific Ocean. These clams have a preferred temperature range of 7.3-15.7°C, and a depth range of 0-46m. 
+    ## [[1]]
 
-analyze_species_suitability(species_name = "Pacific Littleneck Clams", 7.3, 15.7, 0, -46)
+![](MarineAquaSuitability_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
 
-```
+    ## 
+    ## [[2]]
+
+![](MarineAquaSuitability_files/figure-gfm/unnamed-chunk-7-2.png)<!-- -->
+
+[^1]: National Oceanic and Atmospheric Administration. Marine
+    Aquaculture.
+    <https://www.fisheries.noaa.gov/insight/marine-aquaculture#>:~:text=Marine%20aquaculture%20provides%20a%20domestic,supports%20our%20wild%20fisheries%20production.
+
+[^2]: Aquarium of the Pacific. Marine Aquaculture. Seafood for the
+    Future \| Aquarium of the Pacific.
+    <https://www.aquariumofpacific.org/seafoodfuture/marine_aquaculture>
+
+[^3]: National Oceanic and Atmospheric Administration. Marine
+    Aquaculture.
+    <https://www.fisheries.noaa.gov/insight/marine-aquaculture#>:~:text=Marine%20aquaculture%20provides%20a%20domestic,supports%20our%20wild%20fisheries%20production.
+
+[^4]: National Oceanic and Atmospheric Administration. What is the
+    “EEZ”? What is the “EEZ”?: Exploration Facts: NOAA Office of Ocean
+    Exploration and Research.
+    <https://oceanexplorer.noaa.gov/facts/useez.html#>:~:text=An%20“exclusive%20economic%20zone%2C”,both%20living%20and%20nonliving%20resources.
+
+[^5]: National Oceanic and Atmospheric Administration. What is the
+    “EEZ”? What is the “EEZ”?: Exploration Facts: NOAA Office of Ocean
+    Exploration and Research.
+    <https://oceanexplorer.noaa.gov/facts/useez.html#>:~:text=An%20“exclusive%20economic%20zone%2C”,both%20living%20and%20nonliving%20resources.
