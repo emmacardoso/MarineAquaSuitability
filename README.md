@@ -4,7 +4,7 @@ This repository contains an rmarkdown document and associated r scripts for anal
 
 Aditionally, this repository contains a blog style .rmd and .html post to display the contents of the study in a different format!
 
-The original .rmd and .html file includes and outputs all code, whereas the blog files depict the analysis in a cohesive manner.
+The original .rmd and .html file includes and outputs all code, whereas the blog files depict the analysis in a cohesive manner focusing specifically on oyster aquaculture sutability.
 
 ## Background
 Marine aquaculture, as defined by the [National Oceanic and Atmospheric Administration](https://www.fisheries.noaa.gov/insight/marine-aquaculture#:~:text=Marine%20aquaculture%20provides%20a%20domestic,supports%20our%20wild%20fisheries%20production.), encompasses the comprehensive processes of breeding, rearing, and harvesting aquatic plants and animals. The critical role of seafood as a global protein source for over 3 billion people is evident, yet the United States faces a significant seafood deficit, importing more than 60% of its consumption, resulting in a shortfall exceeding $16 billion. Thus, as marine aquaculture has the ability to boost food production, create economic opportunities and boost local economies, and can help keep waterways clean, the implementation of additional marine aquacultures in the United States should be seriously considered. This analysis centers on pinpointing the most suitable Economic Exclusive Zones,  regions where coastal nations posess authority over living and non-living resources, off the West Coast of the United States for developing marine aquacultures, with a specific emphasis on oysters — a proven success in U.S. aquaculture ventures. 
